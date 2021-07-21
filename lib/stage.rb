@@ -23,7 +23,6 @@ class Stage
     @@total_rows = 0
   end
 
-
   def save
     @@stages[self.id] = Stage.new(self.name, self.id)
   end

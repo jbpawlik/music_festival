@@ -1,0 +1,16 @@
+<h1>Woodland Mists Music Festival</h1>
+
+<p>Welcome to Woodland Mists, the greater Portland area's premiere misty woodland music festival. Check out our website to see which artists are scheduled to play each of our stages.</p>
+
+<% if @stages.any? %>
+  <ul>
+    <% @stages.each do |stage| %>
+    <li><a href="/stages/<%= stage.id %>"><%= stage.name %></a></li>
+  <% end %>
+  </ul>
+
+<% else %>
+  <p>There are currently no stages to display.</p>
+<% end %>
+
+<a href="/stages/new">Add a new stage</a>
