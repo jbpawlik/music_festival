@@ -33,4 +33,15 @@ describe '#Stage' do
       expect(Stage.all()).to(eq([stage, stage2]))
     end
   end
+
+  describe('.clear') do
+    it("clears all stages") do
+      stage = Stage.new("Woods", nil)
+      stage.save()
+      stage2 = Stage.new("Mists", nil)
+      stage2.save()
+      Stage.clear()
+      expect(Stage.all).to(eq([]))
+    end
+  end
 end
