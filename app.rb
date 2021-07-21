@@ -44,8 +44,16 @@ delete('/stages/:id') do
   erb(:stages)
 end
 
+post('/stages/:id/artist/') do
+  @stage = Stage.find(params[:id].to_i())
+  artist = Artist.new(params[:artist_name], "genre", @stage.id, nil)
+  artist.save()
+  erb(:artist)
+end
 
-# get('/stages') do
+get('/stages/:id/artist/:artist_id') do
+  @artist = Artist.find(params[:id].to_i())
+  erb(:artist)
+end
 
-#   erb(:edit_stage)
-# end
+

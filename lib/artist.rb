@@ -29,6 +29,10 @@ class Artist
     @@artists[self.id] = Artist.new(self.artist_name, self.genre, self.stage_id, self.id)
   end
 
+  def self.find(id)
+    @@artists[id]
+  end
+
   def stage
     Stage.find(self.stage_id)
   end
