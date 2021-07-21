@@ -11,7 +11,7 @@ class Stage
   end
 
   def ==(stage_to_compare)
-    (self.name() == stage_to_compare.name()) && (self.id() == stage_to_compare.id())
+    self.name() == stage_to_compare.name()
   end
 
   def self.all
