@@ -31,4 +31,8 @@ class Stage
     @@stages[self.id] = Stage.new(self.name, self.id)
   end
 
+  def delete
+    @@stages.delete(self.id)
+  end
+
 end
