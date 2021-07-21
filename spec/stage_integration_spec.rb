@@ -13,4 +13,12 @@ describe('create a new stage', {:type => :feature}) do
   end
 end
 
-describe('delete a stage'), {:type}
+describe('delete a stage', {:type => :feature}) do
+  it('deletes an existing stage') do
+    visit('/stages')
+    click_on('Shrimp Mania')
+    click_on('Edit stage')
+    click_on('Delete Stage')
+    expect(page).to have_no_content('Shrimp Mania')
+  end
+end
