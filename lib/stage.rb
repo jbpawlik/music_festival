@@ -35,4 +35,8 @@ class Stage
     @@stages.delete(self.id)
   end
 
+  def artists
+    Artist.find_by_stage(self.id)
+  end
+
 end

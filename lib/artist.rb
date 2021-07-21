@@ -33,5 +33,15 @@ class Artist
     Stage.find(self.stage_id)
   end
 
+  def self.find_by_stage(stg_id)
+    artists = []
+    @@artists.values.each do |artist|
+      if artist.stage_id == stg_id
+        artists.push(artist)
+      end
+    end
+    artists
+  end
+
 end
 

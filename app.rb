@@ -26,3 +26,26 @@ post('/stages') do
   @stages = Stage.all()
   erb(:stages)
 end
+
+get('/stages/:id') do
+  @stage = Stage.find(params[:id].to_i())
+  erb(:stage)
+end
+
+get('/stages/:id/edit') do
+  @stage = Stage.find(params[:id].to_i())
+  erb(:edit_stage)
+end
+
+delete('/stages/:id') do
+  @stage = Stage.find(params[:id].to_i())
+  @stage.delete
+  @stages = Stage.all
+  erb(:stages)
+end
+
+
+# get('/stages') do
+
+#   erb(:edit_stage)
+# end

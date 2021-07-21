@@ -12,3 +12,5 @@ describe('create a new stage', {:type => :feature}) do
   expect(page).to have_content('Shrimp Mania')
   end
 end
+
+describe('delete a stage'), {:type}
