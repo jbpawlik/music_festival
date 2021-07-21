@@ -10,12 +10,22 @@ class Stage
     @id = id || @@total_rows +=1
   end
 
+  def ==(stage_to_compare)
+    (self.name() == stage_to_compare.name()) && (self.id() == stage_to_compare.id())
+  end
+
   def self.all
     @@stages.values
   end
 
   def self.clear
     @@stages = {}
+    @@total_rows = 0
+  end
+
+
+  def save
+    @@stages[self.id] = Stage.new(self.name, self.id)
   end
 
 end
