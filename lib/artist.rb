@@ -1,15 +1,14 @@
 class Artist
-  attr_reader :id
-  attr_accessor :artist_name, :genre, :stage_id, :id
+  attr_accessor :artist_name, :genre, :stage_id, :artist_id
 
   @@artists = {}
   @@total_rows = 0
 
-  def initialize(artist_name, genre, stage_id, id)
+  def initialize(artist_name, genre, stage_id, artist_id)
     @artist_name = artist_name
     @genre = genre
     @stage_id = stage_id
-    @id = id || @@total_rows += 1
+    @artist_id = artist_id || @@total_rows += 1
   end
 
   def self.clear
@@ -26,7 +25,7 @@ class Artist
   end
 
   def save
-    @@artists[self.id] = Artist.new(self.artist_name, self.genre, self.stage_id, self.id)
+    @@artists[self.artist_id] = Artist.new(self.artist_name, self.genre, self.stage_id, self.artist_id)
   end
 
   def self.find(id)

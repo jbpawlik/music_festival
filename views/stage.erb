@@ -2,10 +2,10 @@
 
 <h3>Artists appearing on this stage</h3>
 
-  <% if @stage.artist %>
+  <% if @stage.artists %>
     <ul>
-      <% @stage.artist.each do |artist| %>
-        <li><a href="/stages/<%= @stage.id %>/artist/<%= @artist.id %>"><%= @artist.artist_name %></a></li>
+      <% @stage.artists.each do |artist| %>
+        <li><a href="/stages/<%= @stage.id %>/artist/<%= artist.id %>"><%= artist.artist_name %></a></li>
       <% end %>
     </ul>
   <% else %>
@@ -14,7 +14,7 @@
 
 <h4>Add an artist:</h4>
 
-<form action="/stages/<%= @stage.id %>/artist/" method="post">
+<form action="/stages/<%= @stage.id %>/artist" method="post">
   <div class="form-group">
     <label for="artist_name">artist name</label>
     <input id="artist_name" name="artist_name" class="form-control" type="text">
